@@ -11,7 +11,7 @@
   flex-shrink: 0;
   cursor: pointer;
   transition: width 0.5s;
-  background-color: aquamarine;
+  background-color: #0CCDE8;
   margin-top: 5px;
 }
 @media only screen and (max-width: 800px) {
@@ -26,12 +26,12 @@
 }
 @media only screen and (min-width: 800px) {
   .game-buttons-section .button {
-    background-color: cyan;
+    background-color: #0C99F2;
   }
 }
 @media only screen and (min-width: 1200px) {
   .game-buttons-section .button {
-    background-color: darkcyan;
+    background-color: #165BDB;
   }
 }
 @media only screen and (min-width: 1200px) {

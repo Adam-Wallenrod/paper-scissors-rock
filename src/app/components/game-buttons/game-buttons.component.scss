@@ -15,7 +15,7 @@
     flex-shrink: 0;
     cursor: pointer;
     transition: width 0.5s;
-    background-color: aquamarine;
+    background-color: #0CCDE8;
     margin-top: 5px;
 
     @include setMobileWidth(800px, 100%);
@@ -23,8 +23,8 @@
   }
 
 
-  @include changeButtonBackground(800px, cyan);
-  @include changeButtonBackground(1200px, darkcyan);
+  @include changeButtonBackground(800px, #0C99F2);
+  @include changeButtonBackground(1200px, #165BDB);
 
 
   @media only screen and (min-width: 1200px) {
