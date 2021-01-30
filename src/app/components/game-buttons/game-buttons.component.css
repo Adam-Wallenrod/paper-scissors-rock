@@ -4,13 +4,40 @@
   flex-wrap: wrap;
 }
 .game-buttons-section .button {
-  border: 1px solid red;
   width: 200px;
   text-align: center;
   flex: auto;
   flex-grow: 0;
   flex-shrink: 0;
   cursor: pointer;
+  transition: width 0.5s;
+  background-color: aquamarine;
+  margin-top: 5px;
+}
+@media only screen and (max-width: 800px) {
+  .game-buttons-section .button {
+    width: 100%;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .game-buttons-section .button {
+    width: 400px;
+  }
+}
+@media only screen and (min-width: 800px) {
+  .game-buttons-section .button {
+    background-color: cyan;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .game-buttons-section .button {
+    background-color: darkcyan;
+  }
+}
+@media only screen and (min-width: 1200px) {
+  .game-buttons-section {
+    flex-wrap: nowrap;
+  }
 }
 
 /*# sourceMappingURL=game-buttons.component.css.map */

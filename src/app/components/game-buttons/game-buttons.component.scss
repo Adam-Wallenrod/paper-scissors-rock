@@ -1,19 +1,38 @@
+@import '../../mixins';
+
+
 .game-buttons-section {
   display: flex;
   justify-content: space-around;
- flex-wrap: wrap;
+  flex-wrap: wrap;
 
   .button {
-    border: 1px solid red;
+    // border: 1px solid red;
     width: 200px;
     text-align: center;
     flex: auto;
     flex-grow: 0;
     flex-shrink: 0;
     cursor: pointer;
+    transition: width 0.5s;
+    background-color: aquamarine;
+    margin-top: 5px;
 
-    span {
-
-    }
+    @include setMobileWidth(800px, 100%);
+    @include setDesktopWidth(1200px, 400px);
   }
+
+
+  @include changeButtonBackground(800px, cyan);
+  @include changeButtonBackground(1200px, darkcyan);
+
+
+  @media only screen and (min-width: 1200px) {
+    flex-wrap: nowrap;
+  }
+
+
 }
+
+
+

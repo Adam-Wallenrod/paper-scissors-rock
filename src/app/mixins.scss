@@ -1,0 +1,30 @@
+@mixin setMobileWidth($screenMaxWidth, $widthValue) {
+
+  @media only screen and(max-width: $screenMaxWidth) {
+    width: $widthValue;
+  }
+
+}
+
+
+@mixin setDesktopWidth($screenMinWidth, $widthValue) {
+
+  @media only screen and(min-width: $screenMinWidth) {
+    width: $widthValue;
+  }
+
+}
+
+
+
+@mixin changeButtonBackground($minWidth, $color) {
+  @media only screen and (min-width: $minWidth) {
+
+    .button {
+      background-color: $color;
+    }
+
+  }
+
+
+}
