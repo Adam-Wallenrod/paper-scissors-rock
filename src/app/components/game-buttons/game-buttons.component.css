@@ -1,0 +1,16 @@
+.game-buttons-section {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+.game-buttons-section .button {
+  border: 1px solid red;
+  width: 200px;
+  text-align: center;
+  flex: auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=game-buttons.component.css.map */
