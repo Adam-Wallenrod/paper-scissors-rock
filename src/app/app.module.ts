@@ -3,11 +3,13 @@ import { NgModule } from '@angular/core';
 import { AppComponent } from './app.component';
 import {AngularFontAwesomeModule} from 'angular-font-awesome';
 import { GameButtonsComponent } from './components/game-buttons/game-buttons.component';
+import { ScoreComponent } from './components/score/score.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    GameButtonsComponent
+    GameButtonsComponent,
+    ScoreComponent
   ],
   imports: [
     BrowserModule,

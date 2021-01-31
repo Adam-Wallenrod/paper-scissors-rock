@@ -1,24 +1,33 @@
 <div class="game-buttons-section" style="display: flex">
 
-  <a class="button fa-4x">
+  <button
+    [disabled]="disableAllButtons"
+    (click)="onButtonClick(gameButtonValue.PAPER)"
+    class="button fa-4x">
     <span>
       <fa name="hand-paper-o"></fa>
     </span>
-  </a>
+  </button>
 
 
-  <a class="button fa-4x">
+  <button
+    [disabled]="disableAllButtons"
+    (click)="onButtonClick(gameButtonValue.ROCK)"
+    class="button fa-4x">
     <span>
       <fa name="hand-rock-o"></fa>
     </span>
-  </a>
+  </button>
 
 
-  <a class="button fa-4x">
+  <button
+    [disabled]="disableAllButtons"
+    (click)="onButtonClick(gameButtonValue.SCISSORS)"
+    class="button fa-4x">
     <span>
       <fa name="hand-scissors-o"></fa>
     </span>
 
-  </a>
+  </button>
 
 </div>
