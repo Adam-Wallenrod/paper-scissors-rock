@@ -9,20 +9,23 @@ import {RoundWinnerEnum} from './enums/round-winner.enum';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
+
   title = 'paper-scissors-rock-app';
+  roundWinner: RoundWinnerEnum = null;
+  winner: RoundWinnerEnum;
+
 
 
   onSelectedGameValue(playerChoice: GameValueEnum) {
-    const computerChoice: GameValueEnum = this.getComputerGameValueChoice();
+    playerChoice = GameValueEnum.ROCK;
+    // const computerChoice: GameValueEnum = this.getComputerGameValueChoice();
+    const computerChoice: GameValueEnum = GameValueEnum.PAPER;
     const round: IGameRound = {
       player: playerChoice,
       computer: computerChoice
     } as IGameRound;
-    console.log(`player: ${this.getChoice(round.player)}`);
-    console.log(`computer: ${this.getChoice(round.computer)}`);
 
-    const roundWinner = this.getRoundWinner(round);
-
+    this.roundWinner = this.getRoundWinner(round);
   }
 
 
@@ -34,13 +37,13 @@ export class AppComponent {
     const max = 2;
     const cpuChoice: number = Math.floor(Math.random() * (max - min + 1) + min);
 
-    console.log('computer chose: ', cpuChoice);
     return cpuChoice;
   }
 
 
-
   getRoundWinner(gameRound: IGameRound): RoundWinnerEnum {
+    console.log(`player: ${this.getChoice(gameRound.player)}`);
+    console.log(`computer: ${this.getChoice(gameRound.computer)}`);
 
     if (gameRound.player === GameValueEnum.PAPER && gameRound.computer === GameValueEnum.ROCK) {
       return RoundWinnerEnum.PLAYER1;
@@ -56,7 +59,7 @@ export class AppComponent {
     }
 
     if (gameRound.player === gameRound.computer) {
-      return RoundWinnerEnum.DRAW;
+      return RoundWinnerEnum.NOBODY;
     }
 
 
@@ -65,7 +68,17 @@ export class AppComponent {
   }
 
   getChoice(choice: GameValueEnum) {
-      return GameValueEnum[choice];
+    return GameValueEnum[choice];
+  }
+
+
+  resetPreviousRoundData() {
+    this.roundWinner = null;
+  }
+
+
+  setWinner(winner: RoundWinnerEnum) {
+    this.winner = winner;
   }
 
 }

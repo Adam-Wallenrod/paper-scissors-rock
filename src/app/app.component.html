@@ -5,6 +5,15 @@
   <app-game-buttons (selectedGameValue)="onSelectedGameValue($event)" ></app-game-buttons>
 
 
+  <app-score [roundWinner]="roundWinner"
+             (resetRoundWinner)="resetPreviousRoundData()"
+             (finalWinner)="setWinner($event)"
+  >
+  </app-score>
+
+
+  {{winner}}
+
 
 
 </div>
