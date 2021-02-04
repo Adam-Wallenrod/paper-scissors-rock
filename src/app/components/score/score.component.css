@@ -1,3 +1,25 @@
-
+.scores {
+  margin-top: 4rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+.scores .points-container:first-child {
+  margin-right: 20px;
+}
+.scores .points-container:last-child {
+  margin-left: 20px;
+}
+.scores .points-container .points {
+  font-size: 4rem;
+}
+.scores .separator {
+  font-size: 3rem;
+  align-self: center;
+  margin-top: 0.5rem;
+}
+.scores .separator span {
+  color: red;
+}
 
 /*# sourceMappingURL=score.component.css.map */

@@ -1,0 +1,38 @@
+$pointsMargin: 20px;
+
+
+.scores {
+  margin-top: 4rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+
+
+  .points-container {
+
+    &:first-child {
+      margin-right: $pointsMargin;
+    }
+
+    &:last-child {
+      margin-left: $pointsMargin;
+    }
+
+    .points {
+      font-size: 4rem;
+    }
+
+  }
+
+  .separator {
+    font-size: 3rem;
+    align-self: center;
+    margin-top: 0.5rem;
+
+    span {
+      color: red;
+    }
+  }
+
+
+}

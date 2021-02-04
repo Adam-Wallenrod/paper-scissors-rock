@@ -1,1 +1,1 @@
-{"version":3,"sourceRoot":"","sources":[],"names":[],"mappings":"","file":"score.component.css"}
+{"version":3,"sourceRoot":"","sources":["score.component.scss"],"names":[],"mappings":"AAGA;EACE;EACA;EACA;EACA;;AAKE;EACE,cAbS;;AAgBX;EACE,aAjBS;;AAoBX;EACE;;AAKJ;EACE;EACA;EACA;;AAEA;EACE","file":"score.component.css"}

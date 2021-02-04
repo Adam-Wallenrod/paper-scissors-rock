@@ -1,5 +1,20 @@
 <div class="scores">
 
-  <span>{{playersScore}}</span> <span>:</span> <span>{{computersScore}}</span>
+<!--  <span>Player 1 -  </span> <span>:</span> <span>{{computersScore}} - CPU</span>-->
+
+  <div class="points-container">
+    <div class="player">Player 1</div>
+    <div class="points">{{playersScore}}</div>
+  </div>
+
+  <div class="separator">
+    <span>:</span>
+  </div>
+
+  <div class="points-container">
+    <div class="player">CPU</div>
+    <div class="points">{{computersScore}}</div>
+  </div>
+
 
 </div>

@@ -1,15 +1,16 @@
-import {Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
+import {ChangeDetectionStrategy, Component, EventEmitter, Input, OnInit, Output} from '@angular/core';
 import {RoundWinnerEnum} from '../../enums/round-winner.enum';
 
 @Component({
   selector: 'app-score',
   templateUrl: './score.component.html',
-  styleUrls: ['./score.component.sass']
+  styleUrls: ['./score.component.scss'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class ScoreComponent implements OnInit {
 
   @Input() set roundWinner(roundWinner: RoundWinnerEnum) {
-    console.log('roundWinnerrrroooo: ', roundWinner);
+    console.log('roundWinnerrrroooo: ', this.convertEnumToString(roundWinner) );
 
 
     switch (roundWinner) {
@@ -50,6 +51,11 @@ export class ScoreComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+
+  convertEnumToString(enumValue: RoundWinnerEnum): string {
+    return RoundWinnerEnum[enumValue];
   }
 
 }

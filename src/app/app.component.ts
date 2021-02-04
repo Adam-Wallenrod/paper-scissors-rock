@@ -17,9 +17,7 @@ export class AppComponent {
 
 
   onSelectedGameValue(playerChoice: GameValueEnum) {
-    playerChoice = GameValueEnum.ROCK;
-    // const computerChoice: GameValueEnum = this.getComputerGameValueChoice();
-    const computerChoice: GameValueEnum = GameValueEnum.PAPER;
+    const computerChoice: GameValueEnum = this.getComputerGameValueChoice();
     const round: IGameRound = {
       player: playerChoice,
       computer: computerChoice
