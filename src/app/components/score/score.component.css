@@ -21,5 +21,18 @@
 .scores .separator span {
   color: red;
 }
+@media only screen and (max-width: 800px) {
+  .scores {
+    flex-wrap: wrap;
+    color: pink;
+  }
+  .scores > div {
+    width: 100%;
+  }
+  .scores > div .points {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
 
 /*# sourceMappingURL=score.component.css.map */
