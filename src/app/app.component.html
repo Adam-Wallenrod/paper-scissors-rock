@@ -1,10 +1,10 @@
-<div>
+<div class="game-container">
 
   <div style="text-align: center">
-    <h1>Paper/scissors/rock</h1>
+    <h1>Paper/rock/scissors</h1>
   </div>
 
-  <app-game-buttons (selectedGameValue)="onSelectedGameValue($event)" ></app-game-buttons>
+  <app-game-buttons (selectedGameValue)="onSelectedGameValue($event)"></app-game-buttons>
 
 
   <app-score [roundWinner]="roundWinner"
@@ -16,8 +16,14 @@
 
   {{winner}}
 
+</div>
 
 
+<div class="fullscreen-info">
+  <div class="game-info">
+<!--    {{gameInfo}}-->
+    <span>GAME OVER</span>
+  </div>
 </div>
 
 

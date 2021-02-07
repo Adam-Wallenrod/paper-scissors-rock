@@ -13,6 +13,7 @@ export class AppComponent {
   title = 'paper-scissors-rock-app';
   roundWinner: RoundWinnerEnum = null;
   winner: RoundWinnerEnum;
+  gameInfo: string;
 
 
 
