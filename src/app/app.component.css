@@ -17,11 +17,33 @@
   background: linear-gradient(yellow, red);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  animation: slide-in-bck-center;
+  animation-delay: 200ms;
+  animation-duration: 2000ms;
 }
 .fullscreen-info .game-info .win {
-  background: linear-gradient(green, #58F158);
+  background: linear-gradient(#0ca70c, #066106);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+.repeat-icon {
+  cursor: pointer;
+}
+
+.with-slide-in-animation {
+  animation: slide-in-bck-center 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@keyframes slide-in-bck-center {
+  0% {
+    transform: perspective(1000px) translateZ(600px);
+    opacity: 0;
+  }
+  100% {
+    transform: perspective(1000px) translateZ(0);
+    opacity: 1;
+  }
 }
 
 /*# sourceMappingURL=app.component.css.map */

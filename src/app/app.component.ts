@@ -1,7 +1,8 @@
-import {Component} from '@angular/core';
+import {AfterViewInit, Component, ElementRef, Renderer2, ViewChild} from '@angular/core';
 import {GameValueEnum} from './components/game-buttons/enums/game-value.enum';
 import {IGameRound} from './interfaces/game-round';
 import {RoundWinnerEnum} from './enums/round-winner.enum';
+import {ScoreComponent} from './components/score/score.component';
 
 @Component({
   selector: 'app-root',
@@ -10,11 +11,23 @@ import {RoundWinnerEnum} from './enums/round-winner.enum';
 })
 export class AppComponent {
 
+
+  @ViewChild(ScoreComponent) scoreComponent: ScoreComponent;
+
   title = 'paper-scissors-rock-app';
   roundWinner: RoundWinnerEnum = null;
   winner: RoundWinnerEnum;
-  gameInfo: string;
+  isGameInfoVisible: boolean;
+  roundWinnerEnum: typeof RoundWinnerEnum = RoundWinnerEnum;
 
+
+
+  constructor(
+    private elementRef: ElementRef,
+    private renderer: Renderer2) {
+
+
+  }
 
 
   onSelectedGameValue(playerChoice: GameValueEnum) {
@@ -24,7 +37,7 @@ export class AppComponent {
       computer: computerChoice
     } as IGameRound;
 
-    this.roundWinner = this.getRoundWinner(round);
+    this.roundWinner = this.getRoundWinnerEnumValue(round);
   }
 
 
@@ -40,7 +53,7 @@ export class AppComponent {
   }
 
 
-  getRoundWinner(gameRound: IGameRound): RoundWinnerEnum {
+  getRoundWinnerEnumValue(gameRound: IGameRound): RoundWinnerEnum {
     console.log(`player: ${this.getChoice(gameRound.player)}`);
     console.log(`computer: ${this.getChoice(gameRound.computer)}`);
 
@@ -78,6 +91,14 @@ export class AppComponent {
 
   setWinner(winner: RoundWinnerEnum) {
     this.winner = winner;
+    this.isGameInfoVisible = true;
+  }
+
+
+  resetGameData() {
+    this.winner = null;
+    this.isGameInfoVisible = false;
+    this.scoreComponent.resetScore();
   }
 
 }

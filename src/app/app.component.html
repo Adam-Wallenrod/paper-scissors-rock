@@ -14,17 +14,28 @@
   </app-score>
 
 
-  {{winner}}
-
 </div>
 
 
-<div class="fullscreen-info">
-  <div class="game-info">
-<!--    {{gameInfo}}-->
-    <span class="lost">GAME OVER</span>
-    <br/>
-    <span class="win">YOU WIN!</span>
+<div class="fullscreen-info" *ngIf="isGameInfoVisible">
+  <div class="game-info" [ngSwitch]="winner">
+
+    <span *ngSwitchCase="roundWinnerEnum.COMPUTER"
+          class="lost with-slide-in-animation">
+      GAME OVER
+    </span>
+
+    <span *ngSwitchCase="roundWinnerEnum.PLAYER1"
+          class="win with-slide-in-animation">
+      YOU WIN!
+    </span>
+
+
+    <span class="repeat-icon"
+      (click)="resetGameData()">
+      <fa name="rotate-right" style="font-size: 3rem"></fa>
+    </span>
+
   </div>
 </div>
 
