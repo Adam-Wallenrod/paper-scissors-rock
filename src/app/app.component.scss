@@ -10,10 +10,24 @@
   display: grid;
 
   .game-info {
-      //position: absolute;
-      font-size: 5rem;
-      margin: auto;
-      font-family: 'VT323', monospace;
+    //position: absolute;
+    font-size: 8rem;
+    margin: auto;
+    font-family: 'VT323', monospace;
+
+    .lost {
+      background: linear-gradient(yellow, red);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .win {
+      background: linear-gradient(green, #58F158);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+
   }
 
 

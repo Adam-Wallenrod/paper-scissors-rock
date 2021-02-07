@@ -9,9 +9,19 @@
   display: grid;
 }
 .fullscreen-info .game-info {
-  font-size: 5rem;
+  font-size: 8rem;
   margin: auto;
   font-family: "VT323", monospace;
+}
+.fullscreen-info .game-info .lost {
+  background: linear-gradient(yellow, red);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.fullscreen-info .game-info .win {
+  background: linear-gradient(green, #58F158);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 /*# sourceMappingURL=app.component.css.map */
