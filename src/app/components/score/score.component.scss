@@ -36,24 +36,19 @@ $wrapValue: 800px;
   }
 
 
-      @media only screen and (max-width: $wrapValue) {
-        flex-wrap: wrap;
-        color: pink;
+  @media only screen and (max-width: $wrapValue) {
+    flex-wrap: wrap;
+    color: pink;
 
-        & > div {
-          width: 100%;
-
-          .points {
-            margin-left: 0;
-            margin-right: 0;
-          }
+    & > div {
+      width: 100%;
+      margin-left: 0 !important;
+      margin-right: 0 !important;
 
 
-        }
+    }
 
-      }
-
-
+  }
 
 
 }

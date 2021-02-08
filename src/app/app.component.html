@@ -1,18 +1,19 @@
 <div class="game-container">
 
-  <div style="text-align: center">
-    <h1>Paper/rock/scissors</h1>
+  <div class="section">
+    <div style="text-align: center">
+      <h1 class="game-title">Paper/rock/scissors</h1>
+    </div>
+
+    <app-game-buttons (selectedGameValue)="onSelectedGameValue($event)"></app-game-buttons>
+
+
+    <app-score [roundWinner]="roundWinner"
+               (resetRoundWinner)="resetPreviousRoundData()"
+               (finalWinner)="setWinner($event)"
+    >
+    </app-score>
   </div>
-
-  <app-game-buttons (selectedGameValue)="onSelectedGameValue($event)"></app-game-buttons>
-
-
-  <app-score [roundWinner]="roundWinner"
-             (resetRoundWinner)="resetPreviousRoundData()"
-             (finalWinner)="setWinner($event)"
-  >
-  </app-score>
-
 
 </div>
 
@@ -32,7 +33,7 @@
 
 
     <span class="repeat-icon"
-      (click)="resetGameData()">
+          (click)="resetGameData()">
       <fa name="rotate-right" style="font-size: 3rem"></fa>
     </span>
 

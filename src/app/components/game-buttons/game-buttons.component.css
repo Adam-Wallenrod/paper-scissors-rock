@@ -4,6 +4,8 @@
   flex-wrap: wrap;
 }
 .game-buttons-section .button {
+  border: none;
+  border-radius: 40px;
   width: 200px;
   text-align: center;
   flex: auto;
@@ -12,7 +14,7 @@
   cursor: pointer;
   transition: width 0.5s;
   background-color: #0CCDE8;
-  margin-top: 5px;
+  margin-top: 15px;
 }
 @media only screen and (max-width: 800px) {
   .game-buttons-section .button {
@@ -23,6 +25,9 @@
   .game-buttons-section .button {
     width: 400px;
   }
+}
+.game-buttons-section .button fa {
+  color: white;
 }
 @media only screen and (min-width: 800px) {
   .game-buttons-section .button {
