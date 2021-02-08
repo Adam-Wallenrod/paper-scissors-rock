@@ -18,15 +18,15 @@
 
 
 <div class="fullscreen-info" *ngIf="isGameInfoVisible">
-  <div class="game-info" [ngSwitch]="winner">
+  <div class="game-info with-slide-in-animation" [ngSwitch]="winner">
 
     <span *ngSwitchCase="roundWinnerEnum.COMPUTER"
-          class="lost with-slide-in-animation">
+          class="lost">
       GAME OVER
     </span>
 
     <span *ngSwitchCase="roundWinnerEnum.PLAYER1"
-          class="win with-slide-in-animation">
+          class="win">
       YOU WIN!
     </span>
 

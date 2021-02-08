@@ -8,6 +8,7 @@
   width: 100vw;
   background-color: rgba(211, 211, 211, 0.5);
   display: grid;
+  overflow: hidden;
 
   .game-info {
     font-size: 8rem;
@@ -18,9 +19,6 @@
       background: linear-gradient(yellow, red);
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
-      animation: slide-in-bck-center;
-      animation-delay: 200ms;
-      animation-duration: 2000ms;
     }
 
     .win {
@@ -48,11 +46,11 @@
 
 @keyframes slide-in-bck-center {
   0% {
-    transform: perspective( 1000px ) translateZ(600px);
+    transform: perspective( 500px ) translateZ(600px);
     opacity: 0;
   }
   100% {
-    transform: perspective(1000px) translateZ(0);
+    transform: perspective(500px) translateZ(0);
     opacity: 1;
   }
 }
