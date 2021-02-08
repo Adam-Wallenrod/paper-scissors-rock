@@ -18,13 +18,9 @@
   align-self: center;
   margin-top: 0.5rem;
 }
-.scores .separator span {
-  color: red;
-}
 @media only screen and (max-width: 800px) {
   .scores {
     flex-wrap: wrap;
-    color: pink;
   }
   .scores > div {
     width: 100%;
