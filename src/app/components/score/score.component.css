@@ -3,6 +3,7 @@
   text-align: center;
   display: flex;
   justify-content: center;
+  font-family: "Coda Caption", sans-serif;
 }
 .scores .points-container:first-child {
   margin-right: 20px;

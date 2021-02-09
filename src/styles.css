@@ -1,7 +1,21 @@
+@charset "UTF-8";
 /* You can add global styles to this file, and also import other style files */
 body {
   margin: 0;
   overflow: hidden;
+}
+body .background-with-font-awesome {
+  position: relative;
+}
+body .background-with-font-awesome:before {
+  font-family: FontAwesome;
+  font-size: 25rem;
+  content: "";
+  right: 20px;
+  position: absolute;
+  bottom: 0;
+  opacity: 0.1;
+  transform: rotate(15deg);
 }
 
 /*# sourceMappingURL=styles.css.map */

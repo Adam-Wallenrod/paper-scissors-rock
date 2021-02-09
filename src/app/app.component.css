@@ -1,4 +1,5 @@
 @import url("https://fonts.googleapis.com/css2?family=VT323&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Coda+Caption:wght@800&display=swap");
 .game-container {
   height: 100vh;
   background-color: #F2DA24;
@@ -9,6 +10,7 @@
 
 .game-title {
   padding: 2rem 0;
+  font-family: "Coda Caption", sans-serif;
 }
 
 .fullscreen-info {
@@ -17,9 +19,10 @@
   top: 0;
   height: 100vh;
   width: 100vw;
-  background-color: rgba(211, 211, 211, 0.5);
+  background-color: rgba(14, 13, 13, 0.7);
   display: grid;
   overflow: hidden;
+  z-index: 20;
 }
 .fullscreen-info .game-info {
   font-size: 8rem;
@@ -43,6 +46,7 @@
 
 .with-slide-in-animation {
   animation: slide-in-bck-center 1s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  z-index: 20;
 }
 
 @keyframes slide-in-bck-center {
