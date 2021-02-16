@@ -42,6 +42,8 @@
 
 .repeat-icon {
   cursor: pointer;
+  text-align: center;
+  display: grid;
 }
 
 .with-slide-in-animation {

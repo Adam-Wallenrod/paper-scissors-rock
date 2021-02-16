@@ -32,11 +32,14 @@
     </span>
 
 
-    <span class="repeat-icon"
-          [ngClass]="{'win': winner === roundWinnerEnum.PLAYER1, 'lost': winner === roundWinnerEnum.COMPUTER}"
-          (click)="resetGameData()">
+    <br/>
+
+    <div class="repeat-icon"
+         [ngClass]="{'win': winner === roundWinnerEnum.PLAYER1, 'lost': winner === roundWinnerEnum.COMPUTER}"
+         (click)="resetGameData()">
       <fa name="rotate-right" style="font-size: 3rem"></fa>
-    </span>
+    </div>
+
 
   </div>
 </div>
