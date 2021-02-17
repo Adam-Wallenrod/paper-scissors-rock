@@ -19,6 +19,7 @@ export class AppComponent {
   winner: RoundWinnerEnum;
   isGameInfoVisible: boolean;
   roundWinnerEnum: typeof RoundWinnerEnum = RoundWinnerEnum;
+  round: IGameRound;
 
 
 
@@ -32,12 +33,12 @@ export class AppComponent {
 
   onSelectedGameValue(playerChoice: GameValueEnum) {
     const computerChoice: GameValueEnum = this.getComputerGameValueChoice();
-    const round: IGameRound = {
+    this.round = {
       player: playerChoice,
       computer: computerChoice
     } as IGameRound;
 
-    this.roundWinner = this.getRoundWinnerEnumValue(round);
+    this.roundWinner = this.getRoundWinnerEnumValue(this.round);
   }
 
 
@@ -91,7 +92,7 @@ export class AppComponent {
 
   setWinner(winner: RoundWinnerEnum) {
     this.winner = winner;
-    this.isGameInfoVisible = true;
+    // this.isGameInfoVisible = true;
   }
 
 

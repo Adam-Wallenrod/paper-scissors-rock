@@ -41,7 +41,7 @@ export class ScoreComponent implements OnInit {
     }
 
     setTimeout(() => {
-      this.resetRoundWinner.emit();
+      // this.resetRoundWinner.emit();
     });
 
   }

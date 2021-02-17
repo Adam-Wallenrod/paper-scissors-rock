@@ -18,6 +18,13 @@
 </div>
 
 
+<app-round-info
+  [isRoundInfoVisible]="true"
+  [round]="round"
+>
+</app-round-info>
+
+
 <div class="fullscreen-info" *ngIf="isGameInfoVisible">
   <div class="game-info with-slide-in-animation" [ngSwitch]="winner">
 

@@ -1,0 +1,35 @@
+<div class="fullscreen-info" *ngIf="isRoundInfoVisible">
+
+
+  <div class="round-container">
+    <div class="player-choice-container choice-container">
+      <div class="player-indicator">Player 1</div>
+      <div class="player-choice">
+        <fa
+          *ngIf="round !== undefined"
+          name="{{getIconForChoice(round.player)}}">
+        </fa>
+      </div>
+    </div>
+
+
+    <div class="cpu-choice-container choice-container">
+      <div class="cpu-indicator">CPU</div>
+      <div class="cpu-choice">
+        <fa
+          *ngIf="round !== undefined"
+          name="{{getIconForChoice(round.computer)}}">
+        </fa>
+      </div>
+    </div>
+
+  </div>
+
+</div>
+
+
+<button
+  style="position: fixed; top: 0; right: 0;"
+  (click)="isRoundInfoVisible=!isRoundInfoVisible">
+  hide/show
+</button>

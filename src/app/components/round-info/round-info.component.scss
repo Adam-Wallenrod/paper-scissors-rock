@@ -1,0 +1,59 @@
+.fullscreen-info {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100vh;
+  width: 100vw;
+  background-color: rgba(14, 13, 13, 0.7);
+  display: grid;
+  overflow: hidden;
+  z-index: 20;
+
+
+  .round-container {
+    display: flex;
+    //justify-content: center;
+    justify-content: space-around;
+    align-items: center;
+
+    .choice-container {
+      color: white;
+
+
+      .player-indicator, .cpu-indicator {
+        font-size: 3rem;
+      }
+
+      .player-choice, .cpu-choice {
+        font-size: 5rem;
+      }
+
+    }
+
+
+  }
+
+
+
+  .game-info {
+    font-size: 8rem;
+    margin: auto;
+    font-family: 'VT323', monospace;
+
+    .lost {
+      background: linear-gradient(yellow, red);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .win {
+      background: linear-gradient(#0ca70c, #066106);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+
+  }
+
+
+}
