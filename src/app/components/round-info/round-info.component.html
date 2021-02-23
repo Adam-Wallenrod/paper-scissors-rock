@@ -4,10 +4,10 @@
   <div class="round-container">
     <div class="player-choice-container choice-container">
       <div class="player-indicator">Player 1</div>
-      <div class="player-choice">
+      <div class="player-choice" #playerChoiceRef>
         <fa
-          *ngIf="round !== undefined"
-          name="{{getIconForChoice(round.player)}}">
+          *ngIf="_round !== undefined"
+          name="{{getIconForChoice(_round.player)}}">
         </fa>
       </div>
     </div>
@@ -15,10 +15,10 @@
 
     <div class="cpu-choice-container choice-container">
       <div class="cpu-indicator">CPU</div>
-      <div class="cpu-choice">
+      <div class="cpu-choice" #cpuChoiceRef>
         <fa
-          *ngIf="round !== undefined"
-          name="{{getIconForChoice(round.computer)}}">
+          *ngIf="_round !== undefined"
+          name="{{getIconForChoice(_round.computer)}}">
         </fa>
       </div>
     </div>

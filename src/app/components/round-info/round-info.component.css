@@ -22,6 +22,7 @@
 }
 .fullscreen-info .round-container .choice-container .player-choice, .fullscreen-info .round-container .choice-container .cpu-choice {
   font-size: 5rem;
+  text-align: center;
 }
 .fullscreen-info .game-info {
   font-size: 8rem;

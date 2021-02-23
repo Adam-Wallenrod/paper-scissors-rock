@@ -3,6 +3,7 @@ import {GameValueEnum} from './components/game-buttons/enums/game-value.enum';
 import {IGameRound} from './interfaces/game-round';
 import {RoundWinnerEnum} from './enums/round-winner.enum';
 import {ScoreComponent} from './components/score/score.component';
+import {GameUtils} from './game.utils';
 
 @Component({
   selector: 'app-root',
@@ -38,7 +39,7 @@ export class AppComponent {
       computer: computerChoice
     } as IGameRound;
 
-    this.roundWinner = this.getRoundWinnerEnumValue(this.round);
+    this.roundWinner = GameUtils.getRoundWinnerEnumValue(this.round);
   }
 
 
@@ -54,35 +55,9 @@ export class AppComponent {
   }
 
 
-  getRoundWinnerEnumValue(gameRound: IGameRound): RoundWinnerEnum {
-    console.log(`player: ${this.getChoice(gameRound.player)}`);
-    console.log(`computer: ${this.getChoice(gameRound.computer)}`);
-
-    if (gameRound.player === GameValueEnum.PAPER && gameRound.computer === GameValueEnum.ROCK) {
-      return RoundWinnerEnum.PLAYER1;
-    }
-
-    if (gameRound.player === GameValueEnum.ROCK && gameRound.computer === GameValueEnum.SCISSORS) {
-      return RoundWinnerEnum.PLAYER1;
-    }
 
 
-    if (gameRound.player === GameValueEnum.SCISSORS && gameRound.computer === GameValueEnum.PAPER) {
-      return RoundWinnerEnum.PLAYER1;
-    }
 
-    if (gameRound.player === gameRound.computer) {
-      return RoundWinnerEnum.NOBODY;
-    }
-
-
-    return RoundWinnerEnum.COMPUTER;
-
-  }
-
-  getChoice(choice: GameValueEnum) {
-    return GameValueEnum[choice];
-  }
 
 
   resetPreviousRoundData() {
