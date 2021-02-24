@@ -14,9 +14,7 @@ export class RoundInfoComponent implements OnInit {
   @Input() isRoundInfoVisible;
 
   @Input() set round(round: IGameRound) {
-
     this._round = round;
-    console.log('_round ====> ', this._round);
 
     if (this._round) {
       this.setAnimationClasses(this._round);
@@ -25,10 +23,22 @@ export class RoundInfoComponent implements OnInit {
   }
 
 
-  @ViewChild('cpuChoiceRef') cpuChoiceRef: ElementRef;
-  @ViewChild('playerChoiceRef') playerChoiceRef: ElementRef;
+  // https://stackoverflow.com/questions/39366981/viewchild-in-ngif
 
+  @ViewChild('cpuChoiceRef') set cpuChoiceRef(cpuChoiceRef: ElementRef) {
+    if (cpuChoiceRef) {
+      this._cpuChoiceRef = cpuChoiceRef;
+    }
+  }
 
+  @ViewChild('playerChoiceRef') set playerChoiceRef(playerChoiceRef: ElementRef) {
+    if (playerChoiceRef) {
+      this._playerChoiceRef = playerChoiceRef;
+    }
+  }
+
+  _cpuChoiceRef: ElementRef;
+  _playerChoiceRef: ElementRef;
   _round: IGameRound;
 
 
@@ -64,35 +74,35 @@ export class RoundInfoComponent implements OnInit {
 
 
   setAnimationClasses(round: IGameRound) {
-    console.log('ref player: ', this.playerChoiceRef);
-    console.log('ref cpu: ', this.cpuChoiceRef);
+    console.log('ref player: ', this._playerChoiceRef);
+    console.log('ref cpu: ', this._cpuChoiceRef);
 
     const winner: RoundWinnerEnum = GameUtils.getRoundWinnerEnumValue(round);
 
 
     switch (winner) {
       case RoundWinnerEnum.PLAYER1:
-        this.addClass(this.playerChoiceRef, 'winner');
-        this.addClass(this.cpuChoiceRef, 'loser');
+        this.addClass(this._playerChoiceRef, 'winner');
+        this.addClass(this._cpuChoiceRef, 'loser');
         break;
 
 
       case RoundWinnerEnum.COMPUTER:
-        this.addClass(this.playerChoiceRef, 'loser');
-        this.addClass(this.cpuChoiceRef, 'winner');
+        this.addClass(this._playerChoiceRef, 'loser');
+        this.addClass(this._cpuChoiceRef, 'winner');
         break;
 
 
       default:
-        this.addClass(this.playerChoiceRef, 'nobody_wins');
-        this.addClass(this.cpuChoiceRef, 'nobody_wins');
+        this.addClass(this._playerChoiceRef, 'nobody_wins');
+        this.addClass(this._cpuChoiceRef, 'nobody_wins');
         break;
     }
 
   }
 
-  addClass(el: any, className: string): void {
-    this.renderer.addClass(el, className);
+  addClass(elmRef: ElementRef, className: string): void {
+    this.renderer.addClass(elmRef.nativeElement, className);
   }
 
 

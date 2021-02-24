@@ -19,25 +19,28 @@ export class AppComponent {
   roundWinner: RoundWinnerEnum = null;
   winner: RoundWinnerEnum;
   isGameInfoVisible: boolean;
+  isRoundInfoVisible: boolean;
   roundWinnerEnum: typeof RoundWinnerEnum = RoundWinnerEnum;
   round: IGameRound;
 
 
 
-  constructor(
-    private elementRef: ElementRef,
-    private renderer: Renderer2) {
-
-
+  constructor() {
   }
 
 
   onSelectedGameValue(playerChoice: GameValueEnum) {
     const computerChoice: GameValueEnum = this.getComputerGameValueChoice();
-    this.round = {
-      player: playerChoice,
-      computer: computerChoice
-    } as IGameRound;
+
+    this.isRoundInfoVisible = true;
+
+    setTimeout(() => {
+      this.round = {
+        player: playerChoice,
+        computer: computerChoice
+      } as IGameRound;
+    });
+
 
     this.roundWinner = GameUtils.getRoundWinnerEnumValue(this.round);
   }
@@ -67,7 +70,6 @@ export class AppComponent {
 
   setWinner(winner: RoundWinnerEnum) {
     this.winner = winner;
-    // this.isGameInfoVisible = true;
   }
 
 
